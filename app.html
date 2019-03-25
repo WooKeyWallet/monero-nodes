@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit" />
+
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+
+  <meta name="format-detection" content="telephone=no,email=no" />
+  <meta name="google" value="notranslate" />
+
+  <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <title>Monero Nodes</title>
+
+  <style>
+    *, ::after, ::before {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    body, html {
+      min-width: 100vw;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+    .content {
+      min-height: 100vh;
+      word-break : normal;
+      word-wrap: break-word;
+      overflow: hidden;
+      padding: 6vw;
+    }
+    .loading {
+      min-height: 88vh;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="content" id="content">
+    <div class="loading"><span>Loading...</span></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    function createXMLHttpObject() {
+      var xmlhttp = false;
+      var XMLHttpFactories = [
+        function() {
+          return new XMLHttpRequest();
+        },
+        function() {
+          return new window.ActiveXObject('Msxml2.XMLHTTP');
+        },
+        function() {
+          return new window.ActiveXObject('Msxml3.XMLHTTP');
+        },
+        function() {
+          return new window.ActiveXObject('Microsoft.XMLHTTP');
+        }
+      ];
+
+      for (var i = 0, len = XMLHttpFactories.length; i < len; i++) {
+        try {
+          xmlhttp = XMLHttpFactories[i]();
+        } catch (e) {
+          continue;
+        }
+        break;
+      }
+
+      return xmlhttp;
+    }
+
+    function reqMarkdown(url, cb) {
+      var xhr = createXMLHttpObject();
+      if (!xhr) {
+        return;
+      }
+
+      xhr.open('GET', url, true);
+      xhr.responseType = 'text';
+
+      xhr.onreadystatechange = function() {
+        if ((xhr.readyState === 4) && (xhr.status === 200)) {
+          return cb && cb(xhr.responseText);
+        }
+      };
+
+      xhr.send(null);
+    }
+
+    var timestamp = (new Date()).getTime();
+    reqMarkdown('./README.md?_t=' + timestamp, function(privacyPolicy, err) {
+      document.getElementById('content').innerHTML = marked(termsOfService + privacyPolicy);
+    });
+  </script>
+</body>
+</html>
