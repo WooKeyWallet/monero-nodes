@@ -1,4 +1,4 @@
-# WooKey Wallet Monero Nodes
+# Monero Nodes
 
 ## WARNING
 
