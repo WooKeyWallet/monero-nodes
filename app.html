@@ -103,8 +103,8 @@
     }
 
     var timestamp = (new Date()).getTime();
-    reqMarkdown('./README.md?_t=' + timestamp, function(privacyPolicy, err) {
-      document.getElementById('content').innerHTML = marked(termsOfService + privacyPolicy);
+    reqMarkdown('./README.md?_t=' + timestamp, function(readMe, err) {
+      document.getElementById('content').innerHTML = marked(readMe);
     });
   </script>
 </body>
