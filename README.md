@@ -43,8 +43,10 @@ The WooKey Team would not ensure the security and availability, please use with 
 
 ### [AutoNode](https://autonode.xmr.pm/)
 
-- EU Nodes
+- Team Support
   - 213.59.118.22:18081 (Russia)
+
+- EU Nodes
   - 176.12.42.102:18081 (Bulgaria)
   - 92.62.230.66:18081 (Czechia)
   - 78.102.64.166:18081 (Czechia)
