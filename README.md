@@ -45,6 +45,8 @@ The WooKey Team would not ensure the security and availability, please use with 
 
 - Team Support
   - 213.59.118.22:18081 (Russia)
+  - Donation Address 
+    `4Fkrv8JZhhzftCWparEwqv8rnbys5tAXx2JoiZukyQhmXGWWxjbzaRe9MWEzYTrbeocj4abzKfA6GWWt8AkVY1fkcjqVXRUQhkaGLsPjsr`
 
 - EU Nodes
   - 176.12.42.102:18081 (Bulgaria)
