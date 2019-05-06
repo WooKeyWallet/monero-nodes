@@ -44,7 +44,7 @@ The WooKey Team would not ensure the security and availability, please use with 
 ### [AutoNode](https://autonode.xmr.pm/)
 
 - Team Support
-  - 213.59.118.22:18081 (Russia)
+  - Building
   - Donation Address 
     `4Fkrv8JZhhzftCWparEwqv8rnbys5tAXx2JoiZukyQhmXGWWxjbzaRe9MWEzYTrbeocj4abzKfA6GWWt8AkVY1fkcjqVXRUQhkaGLsPjsr`
 
